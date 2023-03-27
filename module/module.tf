@@ -1,3 +1,3 @@
 module app {
-     source = "../vpc"
+     source = "../vpc/global"
 }
