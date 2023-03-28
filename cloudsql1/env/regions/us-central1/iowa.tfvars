@@ -1,7 +1,9 @@
- region           = "us-central1"
+ region                    = "us-central1"
  
- name             = "fun-team-project-gcp-db"
+ instance_name             = "fun-team-project-gcp-db"
  
- database_version = "MySQL_8.0"
+ database_version          = "MySQL_8.0"
 
- tier             = "db-f1-micro"
+ tier                      = "db-f1-micro"
+
+ dbname                    = "fun-team-project-gcp-db"

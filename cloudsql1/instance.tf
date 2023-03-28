@@ -27,7 +27,7 @@ resource "google_service_networking_connection" "private_vpc_connection" {
 
 # Creating a SQL Data Base version 2019 thet depends on private ip
 resource "google_sql_database_instance" "wordpress" {
-  name             = var.name
+  name             = var.instance_name
   database_version = var.database_version
 
   depends_on = [google_service_networking_connection.private_vpc_connection]

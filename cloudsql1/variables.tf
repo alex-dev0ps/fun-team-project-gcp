@@ -2,8 +2,8 @@ variable "region" {
   default = "us-central1"
 }
 
-variable "name" {
-  default = "fun-team-project-gcp-db"
+variable "instance_name" {
+  default = "wordpress"
 }
 
 variable "database_version" {
@@ -12,4 +12,8 @@ variable "database_version" {
 
 variable "tier" {
   default = "db-f1-micro"
+}
+
+variable "dbname" {
+    default = "fun-team-project-gcp-db"
 }
