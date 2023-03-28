@@ -4,6 +4,6 @@
 # }
 
 provider "google" {
-  region = "region"
-  zone   = "zone"
+  region = var.region
+  zone   = var.zone
 }
