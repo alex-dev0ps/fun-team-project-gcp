@@ -21,7 +21,7 @@ terraform init
 terraform apply -auto-approve
 ```
 
-## Step 3. Creating ACG with LB:
+## Step 3. Creating ASG with LB:
 ### 1) Open in terminal of "asg"
 ### 2) Run commands below:
 ```
