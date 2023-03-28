@@ -2,6 +2,6 @@
  
  name             = "fun-team-project-gcp-db"
  
- database_version = "SQLSERVER_2019_WEB"
+ database_version = "MySQL_8.0"
 
  tier             = "db-f1-micro"
