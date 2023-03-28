@@ -7,7 +7,7 @@ variable "name" {
 }
 
 variable "database_version" {
-  default = "SQLSERVER_2019_WEB"
+  default = "MySQL_8.0"
 }
 
 variable "tier" {
