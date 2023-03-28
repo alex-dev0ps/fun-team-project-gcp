@@ -1,7 +1,7 @@
 # Instructions
-## Step 1:
-### Open in terminal of "module"
 
+## Step 1:
+### Open in terminal of "account"
 
 ## Step 2:
 ```
