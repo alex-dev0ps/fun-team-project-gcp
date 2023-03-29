@@ -1,7 +1,7 @@
 # Vpc Creation
 resource "google_compute_network" "vpc" {
   
-name                    = var.name
+name                    = var.dbname
   auto_create_subnetworks = "true"
   routing_mode            = "GLOBAL"
 }
