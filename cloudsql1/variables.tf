@@ -15,5 +15,8 @@ variable "tier" {
 }
 
 variable "dbname" {
-    default = "fun-gcp"
+  default = "fun-gcp"
 }
+ variable "vpcname" {
+    default = "fun-gcp"
+ }

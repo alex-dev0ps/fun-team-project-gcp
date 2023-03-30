@@ -1,4 +1,4 @@
-provider "google"  {
-    project = var.dbname
-    region = var.region
+provider "google" {
+  project = var.dbname
+  region  = var.region
 }

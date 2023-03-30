@@ -6,4 +6,6 @@
 
  tier                      = "db-f1-micro"
 
- dbname                    = "Fun-gcp"
+ dbname                    = "fun-gcp"
+
+vpcname                    = "fun-gcp"
