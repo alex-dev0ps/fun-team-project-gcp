@@ -17,6 +17,11 @@ variable "tier" {
 variable "dbname" {
   default = "fun-gcp"
 }
+ 
  variable "vpcname" {
     default = "fun-gcp"
+ }
+
+ variable "projectname1" {
+    default = "fun-team-project-gcp"
  }
