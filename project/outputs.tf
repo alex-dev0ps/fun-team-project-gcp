@@ -10,3 +10,7 @@ output "name_of_vpc" {
 output "database_user" {
   value = google_sql_user.users.name
 }
+
+output "target-pool-name" {
+    value = google_compute_target_pool.target_pool.name
+}

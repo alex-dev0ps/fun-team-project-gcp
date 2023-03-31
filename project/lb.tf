@@ -1,4 +1,4 @@
-Module "lb" {
+module "lb" {
   source       = "GoogleCloudPlatform/lb/google"
   version      = "2.2.0"
   region       = var.region

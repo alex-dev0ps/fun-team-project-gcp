@@ -1,4 +1,4 @@
-Resource "google_compute_firewall" "allow-traffic" {
+resource "google_compute_firewall" "allow-traffic" {
   name    = var.firewall
   network = google_compute_network.vpc.name
 

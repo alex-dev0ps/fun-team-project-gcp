@@ -27,7 +27,7 @@ variable "vpc_name" {
 }
 
 variable "project_name" {
-  default = "iksfneshyzfuiezr"
+  default = "fun-team-project-gcp"
 }
 
 variable "user_password" {
@@ -86,6 +86,10 @@ variable "template_machine_type" {
   default = "e2-medium"
 }
 
-variable "source_image" {
-  default = "data.google_compute_image.centos_7.self_link"
+# variable "source_image" {
+#   default = "data.google_compute_image.centos_7.self_link"
+# }
+
+variable "db_password" {
+  default = "12345678"
 }
