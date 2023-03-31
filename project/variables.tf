@@ -14,14 +14,22 @@ variable "tier" {
   default = "db-f1-micro"
 }
 
-variable "dbname" {
+variable "database_name" {
   default = "fun-gcp"
 }
  
- variable "vpcname" {
+ variable "vpc_name" {
     default = "fun-gcp"
  }
 
- variable "projectname1" {
-    default = "fun-team-project-gcp"
+ variable "project_name" {
+    default = "iksfneshyzfuiezr"
  }
+
+ variable "user_password" {
+    default = "abracadabra"
+}
+
+ variable "username" {
+    default = "cheburashka"
+}
