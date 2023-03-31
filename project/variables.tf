@@ -41,3 +41,51 @@ variable "username" {
 variable "host" {
   default = "gena.com"
 }
+
+variable "lb_name" {
+  default = "fun-gcp-lb"
+}
+
+variable "firewall" {
+  default = "fun-gcp-firewall"
+}
+
+variable "target_pool_name" {
+  default = "fun-gcp-target"
+}
+
+variable "asg_name" {
+  default = "fun-gcp-asg"
+}
+
+variable "min_replicas" {
+  default = "1"
+}
+
+variable "max_replicas" {
+  default = "5"
+}
+
+variable "asg_cooldown" {
+  default = "60"
+}
+
+variable "cpu_target" {
+  default = "0.5"
+}
+
+variable "instance_manager" {
+  default = "fun-gcp-instance"
+}
+
+variable "template_name" {
+  default = "fun-gcp-template"
+}
+
+variable "template_machine_type" {
+  default = "e2-medium"
+}
+
+variable "source_image" {
+  default = "data.google_compute_image.centos_7.self_link"
+}

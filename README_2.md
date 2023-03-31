@@ -1,6 +1,6 @@
-# Instructions how to create the resouses in us-central-1 region:
+# Instructions how to create the resouses in ANY region:
 
-## Step 1. Setting billing account. Creating the project:
+## Setting billing account. Creating the project:
 
 ### 1) Open in terminal of "account"
 ### 2) Run commands below:
