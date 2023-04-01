@@ -20,8 +20,15 @@ region = "asia-east2"
 zone = "asia-east2-a"
 ```
 
-#### 2) Open in terminal of "project"
-#### 3) Run command below:
+#### 2) Open <variables.tf>. In this block change default value to letters from your project line (yellow line)
+```
+variable "project_name" {
+  default = "iksfneshyzfuiezr"
+}
+```
+
+#### 3) Open in terminal of "project"
+#### 4) Run command below:
 ```
 make build-newproject
 ```
