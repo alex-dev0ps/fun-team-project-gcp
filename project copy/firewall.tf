@@ -8,7 +8,7 @@ resource "google_compute_firewall" "allow-traffic" {
 
   allow {
     protocol = "tcp"
-    ports    = ["22","80","3306","443"]
+    ports    = ["22","80","3036","443"]
   }
 
   source_tags   = ["fun-gcp-firewall"]

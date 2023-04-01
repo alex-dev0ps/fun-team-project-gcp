@@ -27,7 +27,7 @@ variable "vpc_name" {
 }
 
 variable "project_name" {
-  default = "iksfneshyzfuiezr"
+  default = "fun-team-project-gcp"
 }
 
 variable "user_password" {

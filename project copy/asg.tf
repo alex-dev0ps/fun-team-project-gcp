@@ -1,3 +1,10 @@
+resource "google_compute_target_pool" "target_pool" {
+    provider = google-beta
+	region = var.region
+	name = var.target_pool_name
+}
+
+
 resource "google_compute_autoscaler" "asg" {
     provider = google-beta
     depends_on = [
@@ -5,7 +12,7 @@ resource "google_compute_autoscaler" "asg" {
     ]
 	zone = var.zone
 	name = var.asg_name
-	target = google_compute_instance_group_manager.asg_instance.self_link
+	target = google_compute_instance_group_manager.asg_instance.id
 	autoscaling_policy {
 		max_replicas = var.max_replicas
 		min_replicas = var.min_replicas
@@ -16,20 +23,13 @@ resource "google_compute_autoscaler" "asg" {
 	}
 }
 
-resource "google_compute_target_pool" "target_pool" {
-    provider = google-beta
-	region = var.region
-	name = var.target_pool_name
-    project = var.project_name    
-}
 
 resource "google_compute_instance_group_manager" "asg_instance" {
     provider = google-beta
 	zone = var.zone
 	name = var.instance_manager
-    project = var.project_name
 	version {
-		instance_template = google_compute_instance_template.instance_template.self_link
+		instance_template = google_compute_instance_template.instance_template.id
 		name = "primary"
 	}
 	target_pools = [google_compute_target_pool.target_pool.self_link]

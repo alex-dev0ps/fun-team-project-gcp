@@ -7,17 +7,16 @@ resource "google_sql_database_instance" "instance" {
   deletion_protection = false
   project             = var.project_name
   root_password = var.db_password
- 
   settings {
     tier = var.tier
 
-  ip_configuration {
+    ip_configuration {
       ipv4_enabled                                  = true
     #   private_network                               = google_compute_network.vpc.id
     #   enable_private_path_for_google_cloud_services = true
 
   authorized_networks {
-        value           = "0.0.0.0/0"
+        value           = "101.0.0.0/16"
         name            = var.username
       }
     }
@@ -25,7 +24,7 @@ resource "google_sql_database_instance" "instance" {
 }
 
 resource "google_sql_database" "database" {
-  name     = var.database_name
+  name     = "my-database"
   instance = google_sql_database_instance.instance.name
 }
 
@@ -34,5 +33,4 @@ resource "google_sql_user" "users" {
   instance = google_sql_database_instance.instance.name
   host     = var.host
   password = var.user_password
-  
 }
