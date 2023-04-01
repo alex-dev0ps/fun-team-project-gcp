@@ -33,7 +33,7 @@ resource "google_compute_instance_group_manager" "asg_instance" {
 		name = "primary"
 	}
 	target_pools = [google_compute_target_pool.target_pool.self_link]
-		base_instance_name = "base_name"
+		base_instance_name = "base-name"
 	}
 
 
@@ -76,7 +76,7 @@ resource "google_compute_instance_template" "instance_template" {
 		source_image = data.google_compute_image.centos_7.self_link
 	}
 	network_interface {
-		network = "google_compute_network.vpc.id"
+		network = google_compute_network.vpc.id
 		access_config {
 		}
 	}
