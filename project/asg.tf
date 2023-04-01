@@ -53,7 +53,7 @@ resource "google_compute_instance_template" "instance_template" {
     yum -y install https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm
     yum -y install yum-utils
     yum-config-manager --enable remi-php56   [Install PHP 5.6]
-    yum -y install php php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
+    yum -y install php56 php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
     wget https://wordpress.org/latest.tar.gz
     tar -xf latest.tar.gz -C /var/www/html/
     mv /var/www/html/wordpress/* /var/www/html/
