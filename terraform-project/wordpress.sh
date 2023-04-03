@@ -12,7 +12,7 @@ cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
 chmod 666 /var/www/html/wp-config.php
 sed 's/'database_name_here'/'gcp-team3-database'/g' /var/www/html/wp-config.php -i
 sed 's/'username_here'/'admin'/g' /var/www/html/wp-config.php -i
-sed 's/'password_here'/'atma-ziya'/g' /var/www/html/wp-config.php -i
+sed 's/'password_here'/'atmaziya'/g' /var/www/html/wp-config.php -i
 sed 's/'localhost'/'34.125.195.242'/g' /var/www/html/wp-config.php -i
 sed 's/SELINUX=permissive/SELINUX=enforcing/g' /etc/sysconfig/selinux -i
 getenforce

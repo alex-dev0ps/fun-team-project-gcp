@@ -7,3 +7,7 @@ output "db_instance_Information" {
   value = google_sql_database_instance.mysql-from-terraform
   sensitive = true
 }
+
+output "load_balancer_ip" {
+    value = ""
+}

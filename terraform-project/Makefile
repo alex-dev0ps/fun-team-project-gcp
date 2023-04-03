@@ -1,33 +1,15 @@
 
-virginia:
-		terraform workspace new virginia || terraform workspace select virginia
-		terraform init
-		terraform apply -var-file envs/virginia.tfvars -auto-approve
-iowa:
-		terraform workspace new iowa ||terraform workspace select iowa
-		terraform init
-		terraform apply -var-file envs/iowa.tfvars -auto-approve
-losangeles:
-		terraform workspace new losangeles || terraform workspace select losangeles
-		terraform init
-		terraform apply -var-file envs/losangeles.tfvars -auto-approve
-lasvegas:
-		terraform workspace new lasvegas || terraform workspace select lasvegas
-		terraform init
-		terraform apply -var-file envs/lasvegas.tfvars -auto-approve		
+australia-southeast1:
+	terraform init && terraform workspace new australia || terraform workspace select australia  &&  terraform apply -var-file envs/regions/australia-southeast1.tfvars -auto-approve
 
-################################################################################################
+build-london:  
+	terraform init && terraform workspace new london  || terraform workspace select london  &&  terraform apply -var-file envs/regions/europe-west2.tfvars -auto-approve
 
-destroy-virginia:
-		terraform workspace new virginia || terraform workspace select virginia
-		terraform init
-		terraform destroy -var-file envs/virginia.tfvars -auto-approve
-destroy-iowa:
-		terraform workspace new iowa ||terraform workspace select iowa
-		terraform destroy -var-file envs/iowa.tfvars -auto-approve
-losangeles:
-		terraform workspace new losangeles || terraform workspace select losangeles
-		terraform destroy -var-file envs/losangeles.tfvars -auto-approve
-lasvegas:
-		terraform workspace new lasvegas || terraform workspace select lasvegas
-		terraform destroy -var-file envs/lasvegas.tfvars -auto-approve
+
+
+
+destroy-australia:
+	terraform workspace select australia && terraform destroy -var-file envs/regions/australia-southeast1.tfvars 
+
+destroy-london: 
+		terraform workspace select london && terraform destroy -var-file envs/regions/europe-west2.tfvars 

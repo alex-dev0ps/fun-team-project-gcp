@@ -60,11 +60,6 @@ resource "null_resource" "enable-apis" {
         gcloud services enable dns.googleapis.com
         gcloud services enable storage-api.googleapis.com
         gcloud services enable container.googleapis.com
-        gcloud services enable file.googleapis.com
-        gcloud services enable sqladmin.googleapis.com
-        gcloud services enable cloudresourcemanager.googleapis.com
-        gcloud services enable cloudresourcemanager.googleapis.com
-        gcloud services enable cloudbilling.googleapis.com
     EOT
   }
 }

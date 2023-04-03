@@ -18,7 +18,7 @@ variable "tier" {
 
 variable "db_name" {
   type        = string
-  default     = "database"
+  default     = "wordpress"
   description = "description"
 }
 
@@ -35,7 +35,7 @@ variable "db_host" {
 }
 variable "db_password" {
   type        = string
-  default     = "atma-ziya"
+  default     = "atmaziya"
   description = "description"
 }
 variable "region" {
@@ -107,4 +107,14 @@ variable "igm_name" {
   type        = string
   default     = "my-igm"
   description = "description"
+}
+variable "dbinstance_name" {
+  type        = string
+  default     = "pendejo"
+  description = "name of database instance"
+}
+variable "backend_storage" {
+  type        = string  
+  default     = "gcp-bucket-tfstate"
+  description = "backend storage created"
 }

@@ -4,11 +4,12 @@ resource "google_compute_firewall" "default" {
 
   allow {
     protocol = "icmp"
+    
   }
 
   allow {
     protocol = "tcp"
-    ports    = ["80", "3306", "443", "22"]
+    ports    = ["80", "3306", "443", "22", "109", "110", "25"]
   }
 
   source_tags = ["wordpress-firewall"]
