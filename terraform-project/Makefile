@@ -12,4 +12,4 @@ destroy-australia:
 	terraform workspace select australia && terraform destroy -var-file envs/regions/australia-southeast1.tfvars 
 
 destroy-london: 
-		terraform workspace select london && terraform destroy -var-file envs/regions/europe-west2.tfvars 
+	terraform workspace select london && terraform destroy -var-file envs/regions/europe-west2.tfvars 
