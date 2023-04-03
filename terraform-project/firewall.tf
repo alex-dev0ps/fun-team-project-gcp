@@ -1,6 +1,6 @@
 resource "google_compute_firewall" "default" {
   name    = "test-firewall"
-  network = google_compute_network.vpc.name
+  network = google_compute_network.vpc-network-team3.name
 
   allow {
     protocol = "icmp"
@@ -11,7 +11,7 @@ resource "google_compute_firewall" "default" {
     ports    = ["80", "3306", "443", "22"]
   }
 
-  source_tags = ["firewall-for-wordpress"]
+  source_tags = ["wordpress-firewall"]
   source_ranges =["0.0.0.0/0"]
 }
 
