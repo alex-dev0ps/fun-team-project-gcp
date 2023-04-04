@@ -27,7 +27,7 @@ variable "vpc_name" {
 }
 
 variable "project_name" {
-  default = "lnvdaxfpqkkadpvf"
+  default = "poducbqsdzqzecoz"
 }
 
 variable "user_password" {

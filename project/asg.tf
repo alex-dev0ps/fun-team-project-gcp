@@ -48,28 +48,29 @@ resource "google_compute_instance_template" "instance_template" {
     project = var.project_name
 
   metadata_startup_script = <<SCRIPT
-    yum install httpd wget unzip epel-release mysql -y
-    yum -y install https://dl.fedoraproject.org/pub/epel/epel-release-latest-8.noarch.rpm
-    yum -y install https://dl.fedoraproject.org/pub/epel/epel-next-release-latest-9.noarch.rpm
-    yum -y install yum-utils
-    yum-config-manager --enable remi-php56   [Install PHP 5.6]
-    yum -y install php56 php-mcrypt php-cli php-gd php-curl php-mysql php-ldap php-zip php-fileinfo
-    wget https://wordpress.org/latest.tar.gz
-    tar -xf latest.tar.gz -C /var/www/html/
-    mv /var/www/html/wordpress/* /var/www/html/
-    cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
-    chmod 666 /var/www/html/wp-config.php
-    sed 's/'database_name_here'/'${google_sql_database.database.name}'/g' /var/www/html/wp-config.php -i
-    sed 's/'username_here'/'${google_sql_user.users.name}'/g' /var/www/html/wp-config.php -i
-    sed 's/'password_here'/'${var.db_password}'/g' /var/www/html/wp-config.php -i
-    sed 's/'localhost'/'${google_sql_database_instance.instance.ip_address.0.ip_address}'/g' /var/www/html/wp-config.php -i
-    sed 's/SELINUX=permissive/SELINUX=enforcing/g' /etc/sysconfig/selinux -i
-    getenforce
-    setenforce 0
-    chown -R apache:apache /var/www/html/
-    systemctl start httpd
-    systemctl enable httpd
-    SCRIPT   
+      sudo setenforce 0
+
+      sudo yum install httpd -y 
+
+      sudo systemctl start httpd
+      sudo systemctl enable httpd
+
+     sudo  yum install unzip wget -y
+      sudo rm -rf /var/www/html/*
+      sudo wget https://wordpress.org/latest.zip
+      sudo unzip latest.zip
+      sudo mv wordpress/* /var/www/html/
+
+      sudo yum install epel-release yum-utils -y
+      sudo yum install http://rpms.remirepo.net/enterprise/remi-release-7.rpm -y
+      sudo yum-config-manager --enable remi-php73
+      sudo yum install php php-mysql -y 
+      sudo systemctl restart httpd
+      sudo php --version
+
+      sudo chown -R apache:apache /var/www/html
+      sudo rm -f wp-config.php
+    SCRIPT
     
 
 	disk {
