@@ -1,95 +1,51 @@
-variable "region" {
-  default = "us-central1"
-}
+variable "region" {}
 
-variable "zone" {
-  default = "us-central1-a"
-}
+variable "zone" {}
 
-variable "instance_name" {
-  default = "wordpress"
-}
+variable "instance_name" {}
 
-variable "database_version" {
-  default = "MySQL_8_0"
-}
+variable "database_version" {}
 
-variable "tier" {
-  default = "db-f1-micro"
-}
+variable "tier" {}
 
-variable "database_name" {
-  default = "fun-gcp"
-}
+variable "database_name" {}
 
-variable "vpc_name" {
-  default = "fun-gcp"
-}
+variable "vpc_name" {}
 
 variable "project_name" {
-  default = "poducbqsdzqzecoz"
+    description = "copy the yellow ID from CLI"
 }
 
-variable "user_password" {
-  default = "abracadabra"
-}
+variable "user_password" {}
 
-variable "username" {
-  default = "cheburashka"
-}
+variable "username" {}
 
-variable "host" {
-  default = "gena.com"
-}
+variable "host" {}
 
-variable "lb_name" {
-  default = "fun-gcp-lb"
-}
+variable "lb_name" {}
 
-variable "firewall" {
-  default = "fun-gcp-firewall"
-}
+variable "firewall" {}
 
-variable "target_pool_name" {
-  default = "fun-gcp-target"
-}
+variable "target_pool_name" {}
 
-variable "asg_name" {
-  default = "fun-gcp-asg"
-}
+variable "asg_name" {}
 
-variable "min_replicas" {
-  default = "1"
-}
+variable "min_replicas" {}
 
-variable "max_replicas" {
-  default = "5"
-}
+variable "max_replicas" {}
 
-variable "asg_cooldown" {
-  default = "60"
-}
+variable "asg_cooldown" {}
 
-variable "cpu_target" {
-  default = "0.5"
-}
+variable "cpu_target" {}
 
-variable "instance_manager" {
-  default = "fun-gcp-instance"
-}
+variable "instance_manager" {}
 
-variable "template_name" {
-  default = "fun-gcp-template"
-}
+variable "template_name" {}
 
-variable "template_machine_type" {
-  default = "e2-medium"
-}
+variable "template_machine_type" {}
 
 # variable "source_image" {
 #   default = "data.google_compute_image.centos_7.self_link"
 # }
 
-variable "db_password" {
-  default = "12345678"
-}
+variable "db_password" {}

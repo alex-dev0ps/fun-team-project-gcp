@@ -12,7 +12,7 @@ database_name = "fun-gcp-db-iowa"
 
 vpc_name = "fun-gcp-vpc-iowa"
 
-project_name = "poducbqsdzqzecoz"
+project_name = "rnsinvkwgpdkdqbx"
 
 user_password = "abracadabra"
 
@@ -28,7 +28,7 @@ target_pool_name = "fun-gcp-target-iowa"
 
 asg_name = "fun-gcp-asg-iowa"
 
-min_replicas =  "1"
+min_replicas = "1"
 
 max_replicas = "5"
 

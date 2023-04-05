@@ -12,7 +12,7 @@ database_name = "fun-gcp-db-hongkong"
 
 vpc_name = "fun-gcp-vpc-hongkong"
 
-project_name = "poducbqsdzqzecoz"
+project_name = "rnsinvkwgpdkdqbx"
 
 user_password = "abracadabra"
 
@@ -28,7 +28,7 @@ target_pool_name = "fun-gcp-target-hongkong"
 
 asg_name = "fun-gcp-asg-hongkong"
 
-min_replicas =  "1"
+min_replicas = "1"
 
 max_replicas = "5"
 

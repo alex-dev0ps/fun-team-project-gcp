@@ -13,7 +13,7 @@ database_name = "fun-gcp-db-tokyo"
 
 vpc_name = "fun-gcp-vpc-tokyo"
 
-project_name = "poducbqsdzqzecoz"
+project_name = "rnsinvkwgpdkdqbx"
 
 user_password = "abracadabra"
 
@@ -29,7 +29,7 @@ target_pool_name = "fun-gcp-target-tokyo"
 
 asg_name = "fun-gcp-asg-tokyo"
 
-min_replicas =  "1"
+min_replicas = "1"
 
 max_replicas = "5"
 

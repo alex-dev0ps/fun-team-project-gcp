@@ -1,51 +1,51 @@
 resource "google_compute_autoscaler" "asg" {
-    provider = google-beta
-    depends_on = [
-        google_sql_database_instance.instance,
-    ]
-	zone = var.zone
-	name = var.asg_name
-	target = google_compute_instance_group_manager.asg_instance.self_link
-	autoscaling_policy {
-		max_replicas = var.max_replicas
-		min_replicas = var.min_replicas
-		cooldown_period = var.asg_cooldown
-	cpu_utilization {
-		target = var.cpu_target
-		}
-	}
+  provider = google-beta
+  depends_on = [
+    google_sql_database_instance.instance,
+  ]
+  zone   = var.zone
+  name   = var.asg_name
+  target = google_compute_instance_group_manager.asg_instance.self_link
+  autoscaling_policy {
+    max_replicas    = var.max_replicas
+    min_replicas    = var.min_replicas
+    cooldown_period = var.asg_cooldown
+    cpu_utilization {
+      target = var.cpu_target
+    }
+  }
 }
 
 resource "google_compute_target_pool" "target_pool" {
-    provider = google-beta
-	region = var.region
-	name = var.target_pool_name
-    project = var.project_name    
+  provider = google-beta
+  region   = var.region
+  name     = var.target_pool_name
+  project  = var.project_name
 }
 
 resource "google_compute_instance_group_manager" "asg_instance" {
-    provider = google-beta
-	zone = var.zone
-	name = var.instance_manager
-    project = var.project_name
-	version {
-		instance_template = google_compute_instance_template.instance_template.self_link
-		name = "primary"
-	}
-	target_pools = [google_compute_target_pool.target_pool.self_link]
-		base_instance_name = "base-name"
-	}
+  provider = google-beta
+  zone     = var.zone
+  name     = var.instance_manager
+  project  = var.project_name
+  version {
+    instance_template = google_compute_instance_template.instance_template.self_link
+    name              = "primary"
+  }
+  target_pools       = [google_compute_target_pool.target_pool.self_link]
+  base_instance_name = "base-name"
+}
 
 
 resource "google_compute_instance_template" "instance_template" {
-    provider = google-beta
-	depends_on = [
-        google_sql_database_instance.instance,
-    ]
-    name = var.template_name
-	machine_type = var.template_machine_type
-	can_ip_forward = false
-    project = var.project_name
+  provider = google-beta
+  depends_on = [
+    google_sql_database_instance.instance,
+  ]
+  name           = var.template_name
+  machine_type   = var.template_machine_type
+  can_ip_forward = false
+  project        = var.project_name
 
   metadata_startup_script = <<SCRIPT
       sudo setenforce 0
@@ -71,20 +71,20 @@ resource "google_compute_instance_template" "instance_template" {
       sudo chown -R apache:apache /var/www/html
       sudo rm -f wp-config.php
     SCRIPT
-    
 
-	disk {
-		source_image = data.google_compute_image.centos_7.self_link
-	}
-	network_interface {
-		network = google_compute_network.vpc.id
-		access_config {
-		}
-	}
+
+  disk {
+    source_image = data.google_compute_image.centos_7.self_link
+  }
+  network_interface {
+    network = google_compute_network.vpc.id
+    access_config {
+    }
+  }
 }
 
 data "google_compute_image" "centos_7" {
   provider = google-beta
-  family  = "centos-7"
-  project = "centos-cloud"
+  family   = "centos-7"
+  project  = "centos-cloud"
 }

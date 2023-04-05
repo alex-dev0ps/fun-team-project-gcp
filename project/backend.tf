@@ -1,6 +1,6 @@
 
 resource "random_id" "bucket_prefix" {
-  byte_length =8 
+  byte_length = 8
 }
 
 resource "google_storage_bucket" "default" {
@@ -12,6 +12,6 @@ resource "google_storage_bucket" "default" {
     enabled = true
   }
 }
-output bucket_name {
-    value = google_storage_bucket.default.name
+output "bucket_name" {
+  value = google_storage_bucket.default.name
 }

@@ -12,5 +12,5 @@ output "database_user" {
 }
 
 output "target-pool-name" {
-    value = google_compute_target_pool.target_pool.name
+  value = google_compute_target_pool.target_pool.name
 }
