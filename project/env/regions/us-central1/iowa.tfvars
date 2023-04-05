@@ -12,7 +12,7 @@ database_name = "fun-gcp-db-iowa"
 
 vpc_name = "fun-gcp-vpc-iowa"
 
-project_name = "rnsinvkwgpdkdqbx"
+project_name = "copy the yellow ID from CLI"
 
 user_password = "abracadabra"
 

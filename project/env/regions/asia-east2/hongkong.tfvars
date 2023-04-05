@@ -12,7 +12,7 @@ database_name = "fun-gcp-db-hongkong"
 
 vpc_name = "fun-gcp-vpc-hongkong"
 
-project_name = "rnsinvkwgpdkdqbx"
+project_name = "copy the yellow ID from CLI"
 
 user_password = "abracadabra"
 

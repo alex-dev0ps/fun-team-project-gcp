@@ -3,33 +3,37 @@
 __________________________________________________________________________________________________________________________
 
 
-## 1) Login to your Google Cloud Console
-## 2) Create a Billing Account
-## 3) Go to GCP Cloud Shell, open Editor
+## 1) Create your Google account with Credit Card information in it
+## 2) Login to your Google Cloud Console
+## 3) Go to Cloud Shell, open Editor
 ## 4) Clone this repository from GitHub. Run command below:
 ```
 cd && git clone git@github.com:alex-dev0ps/fun-team-project-gcp.git
 ```
 __________________________________________________________________________________________________________________________
 ## 5) Setting billing account. Creating the project ID:
-### Please open /fun-team-project-gpc folder. Then open /account folder. To open in terminal of /account, you can right click on /account folder and "open in terminal". You can also run commands below instead:
+### Please open /fun-team-project-gcp folder. Then open /account folder. To open in terminal of /account, you can right click on /account folder and "open in terminal". You can also run commands below instead:
 ```
 cd ..
 cd account
 ```
 __________________________________________________________________________________________________________________________
-### Now you are in /fun-team-project-gpc/account folder. Please run commands below to set up the project ID:
+### Now you are in /fun-team-project-gcp/account folder. Please run commands below to set up the project ID:
 ```
 terraform init
 terraform apply -auto-approve
 ```
 __________________________________________________________________________________________________________________________
-## 6) Changing project ID in variables.tf
-### Make sure you see your project ID in yellow color to verify you are inside your project and can start provisioning resources. Please copy this yellow line (your project ID) and put it instead the existing default value in variables.tf file like shown below:
+## 6) Changing project ID in variables.tf and .tfvars files
+### Make sure you see your project ID in yellow color to verify you are inside your project and can start provisioning resources. Please copy this yellow line from your CLI (your project ID) and put it instead the existing default value in variables.tf file like shown below:
 ```
 variable "project_name" {
-  default = "vzfnspssxqnzwtrv" --> "your_project_ID"
+  default = "copy the yellow ID from CLI"
 }
+```
+### Also copy this yellow line (your project ID) and put it instead the existing default value in ALL .tfvars files like shown below. (.tfvars files are located in /env/regions folder).
+```
+project_name = "copy the yellow ID from CLI"
 ```
 __________________________________________________________________________________________________________________________
 ## 7) Now you are in /fun-team-project-gpc/account. To create the resources you should be in /fun-team-project-gpc/project. Please don't use right click and don't "open in terminal". You should run the following commands instead:
@@ -50,7 +54,7 @@ ________________________________________________________________________________
 __________________________________________________________________________________________________________________________
 
 # IMPORTANT INFORMATION:
-## If you see Apache TEST page instead of Wordpress, please follow:
+## If you see Apache TEST page instead of Wordpress, please read below:
 
 #### The steps to clear your browser cache may vary depending on the browser you are using. Here are some general instructions that should work for most browsers:
 

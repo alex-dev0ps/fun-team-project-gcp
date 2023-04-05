@@ -13,7 +13,7 @@ database_name = "fun-gcp-db-tokyo"
 
 vpc_name = "fun-gcp-vpc-tokyo"
 
-project_name = "rnsinvkwgpdkdqbx"
+project_name = "copy the yellow ID from CLI"
 
 user_password = "abracadabra"
 
