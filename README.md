@@ -24,14 +24,9 @@ terraform init
 terraform apply -auto-approve
 ```
 __________________________________________________________________________________________________________________________
-## 6) Changing project ID in variables.tf and .tfvars files
-### Make sure you see your project ID in yellow color to verify you are inside your project and can start provisioning resources. Please copy this yellow line from your CLI (your project ID) and put it instead the existing default value in variables.tf file like shown below:
-```
-variable "project_name" {
-  default = "copy the yellow ID from CLI"
-}
-```
-### Also copy this yellow line (your project ID) and put it instead the existing default value in ALL .tfvars files like shown below. (.tfvars files are located in /env/regions folder).
+## 6) Changing project ID in .tfvars files
+### Make sure you see your project ID in yellow color to verify you are inside your project and can start provisioning resources.
+### Please copy this yellow line (your project ID) and put it instead the existing default value in ALL .tfvars files like shown below. (.tfvars files are located in /env/regions folder).
 ```
 project_name = "copy the yellow ID from CLI"
 ```

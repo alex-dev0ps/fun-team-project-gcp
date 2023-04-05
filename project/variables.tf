@@ -12,9 +12,7 @@ variable "database_name" {}
 
 variable "vpc_name" {}
 
-variable "project_name" {
-    description = "copy the yellow ID from CLI"
-}
+variable "project_name" {}
 
 variable "user_password" {}
 
